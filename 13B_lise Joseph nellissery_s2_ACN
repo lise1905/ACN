@@ -1,0 +1,90 @@
+1) create a directory:
+
+q1)merge the file m1 and m2 to make m3 in folder day2
+$cat>m3.txt m1.txt m2.txt
+
+q2)copy the file m3 to day3 folder under the name c3
+$cp ~/fisat/day2/m3.txt ~/fisat/day3/c3.txt
+
+q3)change the permission of file f1 with write permission
+$chmod a+w f1.txt
+
+q4)list all process status in your computer
+$ps
+$ps -aux
+
+q5)list your present working dirctory
+$pwd
+
+2) write a shell script to find area of circle ,rectangle and triangle using switch case:
+
+shell script:
+
+echo "***Menu***"
+echo "1.Area of circle"
+echo "2.Area of rectangle"
+echo "3.Area of triangle"
+echo "Enter choice :"
+read ch
+case $ch in
+    1) echo "Enter radius of circle:"
+       read r
+       p=`expr $r \* $r \* 22`
+       area=`expr $p / 7`
+       echo "Area of circle is:$area" ;;
+    2) echo "Enter lenght and breadth of rectangle:"
+       read l
+       read b
+       area=`expr $l \* $b`
+       echo "Area of rectangle is:$area" ;;
+    3) echo "Enter breadth and height of triangle:"
+       read br
+       read h
+       a=`expr  $br \* $h`
+       area=`expr $a / 2`
+       echo "Area of triangle is:$area" ;;
+    *) echo "Invalid choice!!"
+esac
+
+output:
+
+exam@debian:~$ emacs area.sh
+exam@debian:~$ bash area.sh
+***Menu***
+1.Area of circle
+2.Area of rectangle
+3.Area of triangle
+Enter choice :
+3
+Enter breadth and height of triangle:
+3
+3
+Area of triangle is:4
+
+
+
+exam@debian:~$ bash area.sh
+***Menu***
+1.Area of circle
+2.Area of rectangle
+3.Area of triangle
+Enter choice :
+2
+Enter lenght and breadth of rectangle:
+4
+3
+Area of rectangle is:12
+
+
+
+exam@debian:~$ bash area.sh
+***Menu***
+1.Area of circle
+2.Area of rectangle
+3.Area of triangle
+Enter choice :
+1
+Enter radius of circle:
+4
+Area of circle is:50
+
